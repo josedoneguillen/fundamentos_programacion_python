@@ -31,29 +31,29 @@ def numeros(cant):
     #Definir lista con la cantidad de valores
     lista = []
 
-    # Es numerico
-    es_num = False
-
     # Definit contador para el ciclo
     i = 0
 
     # Ciclo while
-    while (i < cant):
+    while (i < int(cant)):
+
+        # Es numerico
+        not_num = True
 
         # Declarar variable numero
         numero = input("Ingrese un numero: ")
 
          # Ciclo while para pedir lados mientras no sea numerico
-        while(not es_num):
+        while(not_num):
 
             # Si es numerico
             if (numero.isdigit()):
 
                 # Solicitar y almacenar numeros en la lista
-                lista[i] = float(numero)
+                lista.append(float(numero))
 
                 # Definir a verdadero para romper el ciclo
-                es_num = True
+                not_num = False
 
                 # Incrementar contador
                 i += 1
@@ -109,16 +109,16 @@ while(salir == 0):
 
     elif operacion == 6 :
 
-        # Área
-        print(operaciones.area(numeros(1)))  
+        # Raiz Cuadrada
+        print(operaciones.raiz(numeros(1)))  
 
     elif operacion == 7 :
 
         # Es numerico
-        es_num = False
+        not_num = True
 
         # Ciclo while para pedir lados mientras no sea numerico
-        while(not es_num):
+        while(not_num):
 
             # Preguntar al usuario cuantos lados tiene el area que desea calcular
             lados = input("Ingrese la cantidad de lados:")
@@ -130,13 +130,13 @@ while(salir == 0):
                 lados = int(lados);
 
                 # Definir a verdadero para romper el ciclo
-                es_num = True
+                not_num = False
 
             else:
                 # Imprimir mensaje en caso de no ser numerico
                 print("El dato ingresado no es numerico.")    
 
-        # Raíz cuadrada
+        # Area
         print(operaciones.area(numeros(lados)))       
     
     else :
