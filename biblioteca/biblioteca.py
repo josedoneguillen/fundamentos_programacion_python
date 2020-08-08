@@ -7,17 +7,20 @@ class Biblioteca():
         self.libros = [
             {
                 "nombre": "Sistemas Operativos Modernos", 
-                "autor": "Andrew S. Tanenbaum", 
+                "autor": "Andrew S. Tanenbaum",
+                "publicacion": "2020-05-24", 
                 "copias": 10
             },
             {
                 "nombre": "Python Crash Course", 
-                "autor": "Eric M.", 
+                "autor": "Eric M.",
+                "publicacion": "2020-05-24", 
                 "copias": 1
             },
             {
                 "nombre": "Learn Python: the hard way", 
                 "autor": "Zed A. Shaw", 
+                "publicacion": "2020-05-24",
                 "copias": 1
             }
         ]
@@ -26,13 +29,15 @@ class Biblioteca():
             {
                 "nombre": "Sistemas Operativos Modernos (Audio)", 
                 "autor": "Andrew S. Tanenbaum",
+                "publicacion": "2020-05-24",
                 "formato": "mp4", 
                 "duracion": 100,
                 "copias": 12
             },
             {
                 "nombre": "Python Crash Course (Audio)", 
-                "autor": "Eric M.", 
+                "autor": "Eric M.",
+                "publicacion": "2020-05-24", 
                 "formato": "mp4",
                 "duracion": 360,
                 "copias": 12
@@ -40,6 +45,7 @@ class Biblioteca():
             {
                 "nombre": "Learn Python: the hard way (Audio)", 
                 "autor": "Zed A. Shaw",
+                "publicacion": "2020-05-24",
                 "formato": "mp4", 
                 "duracion": 120,
                 "copias": 12
@@ -215,10 +221,11 @@ class Biblioteca():
     def agregar_libro(self):
 
         nombre = input('Ingrese el nombre del libro: ')
-        autor = input('Ingrese el nombre del autor libro: ')   
+        autor = input('Ingrese el nombre del autor libro: ')
+        publicacion = input('Ingrese fecha de publicación: ')   
         copias = int(input('Ingrese las copias disponibles del libro: '))
 
-        self.libros.append({"nombre": nombre, "autor": autor, "copias": copias})
+        self.libros.append({"nombre": nombre, "autor": autor, "publicacion": publicacion, "copias": copias})
 
         self.mostrar_libros();
 
@@ -228,11 +235,12 @@ class Biblioteca():
 
         nombre = input('Ingrese el nombre del libro: ')
         autor = input('Ingrese el nombre del autor libro: ')
+        publicacion = input('Ingrese fecha de publicación: ')
         formato = input('Ingrese el formato del audio: ')      
         duracion = int(input('Ingrese la duración del audio: '))
         copias = int(input('Ingrese las copias disponibles del libro: '))
 
-        self.audio_libros.append({"nombre": nombre, "autor": autor, "formato": formato, "duracion": duracion, "copias": copias})
+        self.audio_libros.append({"nombre": nombre, "autor": autor, "publicacion": publicacion, "formato": formato, "duracion": duracion, "copias": copias})
 
         self.mostrar_audio_libros();
 
